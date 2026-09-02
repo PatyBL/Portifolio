@@ -123,6 +123,8 @@ body{
 
     transition: 0.5s ease;
 
+    position: relative;
+
 
     animation-name: entrada;
     animation-duration: 1.6s;
@@ -142,6 +144,17 @@ body{
         gap: 12vw;
         border-left: 10px solid rgba(22, 172, 130, 0.25);
     }
+}
+
+.project{
+    background-color: rgba(55, 62, 85, 0.233);
+    top: 10px;
+    right: 10px;
+}
+
+.project:hover{
+    transform: scale(1.009);
+    box-shadow: 1px 1px 30px rgba(131, 47, 131, 0.603);
 }
 
 
