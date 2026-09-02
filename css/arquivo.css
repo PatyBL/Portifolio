@@ -5,6 +5,8 @@
 
 body{
     background-color: rgba(112, 116, 128, 0.795);
+
+    border-right: 2px solid rgba(22, 172, 130, 0.25);
 }
 
 .card-header{
@@ -51,7 +53,7 @@ body{
 }
 
 .card-header img:hover{
-    cursor: hand;
+    cursor: none;
     transform: scale(1.06) rotate(-1.2deg);
 }
 
@@ -67,6 +69,8 @@ body{
 
 .card-header h1:hover{
     transform: scale(1.02);
+
+    cursor: none;
 }
 
 .sobre{
@@ -86,11 +90,13 @@ body{
     border-radius: 10px;
     box-shadow: 1px 1px 30px rgba(131, 47, 131, 0.603);
 
+    cursor: default;
+
     transition: 0.4s ease;
 }
 
 .sobre:hover{
-    transform: scale(1.001);
+    transform: scale(1.009);
 }
 
 .sobre h4{
@@ -98,21 +104,50 @@ body{
 }
 
 .title{
-    margin: 50% 50%;
+    font-size: 2.6rem;
+    margin: 50px 30%;
 }
 
 .projects{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    gap: 12vw;
+    padding: 20px;
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
     justify-items: center;
+    
+    background-color: rgba(55, 62, 85, 0.03);
+    border-left: 10px solid rgba(22, 172, 130, 0.25);
+    border-radius: 10px;
+
+    transition: 0.5s ease;
+
+
+    animation-name: entrada;
+    animation-duration: 1.6s;
+    animation-iteration-count: 1;
 }
 
+@keyframes entrada{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+        gap: 0;
+        border-left: 150px solid rgba(22, 172, 130, 0.901);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        gap: 12vw;
+        border-left: 10px solid rgba(22, 172, 130, 0.25);
+    }
+}
+
+
+
 .projects h2{
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     background-color: aqua;
 }
 
