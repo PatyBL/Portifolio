@@ -7,10 +7,14 @@ body{
     background-color: rgba(112, 116, 128, 0.795);
 
     border-right: 2px solid rgba(22, 172, 130, 0.25);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .card-header{
-    margin-left: 60px;
+    margin-left: 0px;
     margin-top: 10px;
     border-radius: 10px;
     background-color: rgba(118, 186, 212, 0.719);
@@ -44,8 +48,10 @@ body{
 
 .card-header img{
     margin: 10px 22px;
-    width: 10vw;
-    height: 20vh;
+    min-width: 100px;
+    min-height: 150px;
+    max-width: 15vw;
+    max-height: 20vh;
     border: 4px solid rgb(51, 25, 51);
     border-radius: 100%;
 
@@ -110,15 +116,17 @@ body{
 
 .projects{
     display: flex;
-    gap: 12vw;
+    gap: 8vw;
     padding: 20px;
-    max-width: 1200px;
     width: 90%;
-    margin: 0 auto;
+    height: 100%;
+    margin: 1vw;
     justify-items: center;
+    flex-wrap: wrap;
     
     background-color: rgba(55, 62, 85, 0.03);
     border-left: 10px solid rgba(22, 172, 130, 0.25);
+    border-right: 10px solid rgba(22, 172, 130, 0.25);
     border-radius: 10px;
 
     transition: 0.5s ease;
@@ -127,7 +135,7 @@ body{
 
 
     animation-name: entrada;
-    animation-duration: 1.6s;
+    animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
@@ -136,32 +144,129 @@ body{
         transform: translateX(-100px);
         opacity: 0;
         gap: 0;
-        border-left: 150px solid rgba(22, 172, 130, 0.901);
+        border-left: 70px solid rgba(22, 172, 130, 0.901);
+        border-right: 70px solid rgba(22, 172, 130, 0.901);
     }
     100%{
         transform: translateX(0);
         opacity: 1;
-        gap: 12vw;
+        gap: 8vw;
         border-left: 10px solid rgba(22, 172, 130, 0.25);
+        border-right: 10px solid rgba(22, 172, 130, 0.25);
     }
 }
 
 .project{
     background-color: rgba(55, 62, 85, 0.233);
+    width: 15vw;
+    height: 15vh;
     top: 10px;
     right: 10px;
+    border-radius: 10px;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.5s ease;
+
+    animation-name: projecty-entrada;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+}
+
+@keyframes projecty-entrada{
+    0%{
+        transform: scale(1.35) rotate(-360deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.project .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 15vh;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.637);
 }
 
 .project:hover{
-    transform: scale(1.009);
-    box-shadow: 1px 1px 30px rgba(131, 47, 131, 0.603);
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(72, 101, 144, 0.603);
+}
+
+.project .inf p{
+    opacity: 0;
+}
+
+.project-active{
+    top: 10px;
+    right: 10px;
+    width: 20vw;
+    height: 30vh;
+
+    transition:
+        top 0.5s ease,
+        right 0.5s ease,
+        width 0.5s ease,
+        height 0.5s ease,
+        background-color 1.5s ease,
+        box-shadow 2.5s ease;
+
+    
+    background-color: rgba(55, 62, 85, 0.233);
+    box-shadow: 0 0 20px rgba(72, 101, 144, 0.791);
+    border-radius: 10px;
+
+    
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    animation-name: project-entrada;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+}
+
+@keyframes project-entrada{
+    0%{
+        transform: translateY(-50px) scale(0.2) rotate(-10deg);
+    }
+    100%{
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+.project-active .inf{
+    cursor:text;
+    font-size: 0.8rem;
+}
+
+.project-active .inf p{
+    opacity: 1;
+    transition: opacity 3s ease;
 }
 
 
+.project-active .img{
+    display: none;
+    width: 20vw;
+    height: 20vh;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.637);
+    transition: 0.3s ease;
+}
+
+.project-active .img-a{
+
+}
 
 .projects h2{
     font-size: 1.4rem;
     background-color: aqua;
 }
-
-
