@@ -1,3 +1,4 @@
+//clicar e colocar o projeto em tamanho grande e clicar novamente para voltar ao tamanho normal
 function sizeme(element){
     const projects = document.querySelectorAll('.project');
 
@@ -12,7 +13,7 @@ function sizeme(element){
 
     element.classList.add('project-active');
 }
-
+//clicar e colocar todas as imagens em tamanho grande e clicar novamente para voltar ao tamanho normal
 function gallery(event, element){
     event.stopPropagation();
 
