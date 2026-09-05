@@ -49,3 +49,19 @@ function gallery(event, element){
         element.classList.add('img');
     }
 }
+
+function maximizar(element){
+    const certificado = document.querySelectorAll('.certificado');
+    // Se o projeto já estiver maximizado, fecha
+    if(element.classList.contains('certificado-maximizado')){
+        element.classList.remove('certificado-maximizado');
+        return;
+    }
+    // Fecha todos os outros projetos
+    certificado.forEach(card => {
+        card.classList.remove('certificado-maximizado');
+    });
+    // Maximiza o projeto clicado
+    element.classList.add('certificado-maximizado');
+}
+     
