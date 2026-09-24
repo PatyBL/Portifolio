@@ -44,10 +44,10 @@ function gallery(event, element){
         return;
     }
     // Fecha a galeria
-    if(element.classList.contains('img-a')){
-        element.classList.remove('img-a');
-        element.classList.add('img');
-    }
+//    if(element.classList.contains('img-a')){
+//        element.classList.remove('img-a');
+//        element.classList.add('img');
+//    }
 }
 
 function maximizar(element){
