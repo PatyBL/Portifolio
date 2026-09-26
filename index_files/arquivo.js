@@ -29,13 +29,19 @@ function sizeme(element){
 }
 
 // Clicar na imagem e abrir/fechar a galeria com a verificação de active já
-function gallery(event, element){
+function gallery(event, element, id){
     event.stopPropagation();
     // Impede a galeria de abrir caso o projeto não esteja maximizado sendo a unica verifaicação de active
     const project = element.closest('.project');
+    const button = document.getElementById(id)
 
     if(!project.classList.contains('project-active')){
         return;
+    }
+
+    if(button){
+        button.classList.remove("btn-fechar")
+        button.classList.add("btn-fecharON")
     }
     // Abre a galeria
     if(element.classList.contains('img')){
@@ -43,11 +49,22 @@ function gallery(event, element){
         element.classList.add('img-a');
         return;
     }
-    // Fecha a galeria
-//    if(element.classList.contains('img-a')){
-//        element.classList.remove('img-a');
-//        element.classList.add('img');
-//    }
+
+}
+
+function exit_gallery(event, element, eu){
+    event.stopPropagation();
+
+    if(eu){
+        eu.classList.remove("btn-fecharON")
+        eu.classList.add("btn-fechar")
+    }
+
+    if(element.classList.contains('img-a')){
+
+        element.classList.remove('img-a');
+        element.classList.add('img');
+    }
 }
 
 function maximizar(element){
