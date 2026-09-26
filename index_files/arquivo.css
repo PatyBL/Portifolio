@@ -387,10 +387,10 @@ body::before{
 
     background:rgba(26,23,34,.65);
     border:1px solid rgba(185,156,255,.16);
-    border-radius:20px;
+    border-radius: 20px;
     
     position:relative;
-    animation:entrada 1s ease;
+    animation:entrada 1s linear;
 }
 
 @keyframes entrada{
@@ -404,6 +404,94 @@ body::before{
         transform:translateY(0);
     }
 }
+
+.projects .pop-up {
+    background-color: #7a1c8777;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+
+    padding: 10px;
+    border: 2px solid #a723b8;
+    border-radius: 10px;
+    left: -12%;
+    top: -4%;
+
+    cursor: pointer;
+
+    transition: 
+        box-shadow .4s linear,
+        transform .6s linear;
+
+    z-index: 100;
+}
+
+.projects .pop-up li{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+.projects .pop-up:hover {
+    border: 2px solid #b82323;
+    box-shadow: 0 0 100px 10px rgba(149, 23, 42, 0.309);
+
+    transform: scale(1.01);
+}
+
+.projects .pop-up-exit {
+
+    background-color: #b8238955;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+
+    padding: 10px;
+    border: 2px solid #b82323;
+    border-radius: 10px;
+    left: -12%;
+    top: -4%;
+
+    z-index: 100;
+
+    animation: kitpop 1.3s ease forwards;
+    cursor: none;
+}
+
+@keyframes kitpop {
+    0%{
+        transform: scale(0.87);
+    }
+
+    10%{
+        box-shadow: -67px 0 60px 50px rgba(149, 23, 42, 0.309);
+    }
+
+    30%{
+        transform: translateX(160px);
+        opacity: 0.8;
+    }
+
+    31%{
+        box-shadow: 67px 0 60px 50px rgba(149, 23, 42, 0.309);
+    }
+
+    67%{
+        opacity: 0.3;
+    }
+
+    99%{
+        transform: translateX(-40vw);
+    }
+
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
 
 .project{
 
@@ -666,6 +754,8 @@ body::before{
 
 .project-active .btn-fecharON {
     background-color: rgba(211, 211, 211, 0.249);
+    color: rgba(10,10,10,1);
+    font-size: 25px;
     border: 2px solid rgba(132, 23, 23, 0.208);
     padding: 10px;
     width: 10px;

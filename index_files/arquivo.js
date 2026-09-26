@@ -81,4 +81,10 @@ function maximizar(element){
     // Maximiza o projeto clicado
     element.classList.add('certificado-maximizado');
 }
-     
+
+function pop_upEXIT(element){
+    if(element){
+        element.classList.remove('pop-up')
+        element.classList.add('pop-up-exit')
+    }
+}

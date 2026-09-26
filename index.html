@@ -136,7 +136,13 @@
 
         <h2 class="title">Estes são alguns projetos:</h2>
         <section class="projects">
-            <span class="pop-up">Clique na galeria para abrir.<br> Clique na imagem para expandir.<br> Clique novamente no card para fechar.</span>
+
+            <ul class="pop-up" onclick="pop_upEXIT(this)">
+                <li>Clique no CARD para Abrir.</li>
+                <li>Clique novamente no CARD para Fechar.</li>
+                <li>Clique na GALERIA para Abrir.</li>
+                <li>Clique e Segure para Expandir a IMAGEM.</li>
+            </ul>
 
             <!-- YOFI -->
             <div class="project" id="yofi" onclick="sizeme(this)">
@@ -150,7 +156,7 @@
                     <img src="imagens/Yofi/integracoes.avif" alt="Imagem do projeto YOFI">
                     <img src="imagens/Yofi/myalinda.gif" alt="Imagem do projeto YOFI">
                     <img src="imagens/Yofi/objetivos.avif" alt="Imagem do projeto YOFI">
-                    <span id="1" class="btn-fechar" onclick="exit_gallery(event, this.parentElement, this)"> X </span>
+                    <span id="1" class="btn-fechar" onclick="exit_gallery(event, this.parentElement, this)"> × </span>
                 </ul>
 
                 <div class="inf">
@@ -182,7 +188,7 @@
                     <img src="imagens/Museu/capoeira.gif" alt="Imagem do Museu Digital">
                     <img src="imagens/Museu/tiger_tucan.avif" alt="Imagem do Museu Digital">
                     <img src="imagens/Museu/tela_inicial.gif" alt="Imagem do Museu Digital">
-                    <span id="2" class="btn-fechar" onclick="exit_gallery(this.parentElement)"> X </span>
+                    <span id="2" class="btn-fechar" onclick="exit_gallery(event, this.parentElement, this)"> × </span>
                 </ul>
 
                 <div class="inf">
@@ -212,7 +218,7 @@
                     <img src="imagens/Constituicao/gravacao.gif" alt="Imagem do projeto Constituição">
                     <img src="imagens/Constituicao/sidebar.avif" alt="Imagem do projeto Constituição">
                     <img src="imagens/Constituicao/navbar.avif" alt="Imagem do projeto Constituição">
-                    <span id="3" class="btn-fechar" onclick="exit_gallery(this.parentElement)"> X </span>
+                    <span id="3" class="btn-fechar" onclick="exit_gallery(event, this.parentElement, this)"> × </span>
                 </ul>
 
                 <div class="inf">
