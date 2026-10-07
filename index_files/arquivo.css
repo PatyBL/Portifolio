@@ -405,93 +405,68 @@ body::before{
     }
 }
 
-.projects .pop-up {
-    background-color: #7a1c8777;
+.informacao {
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 50%;
+
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient( 300deg,lightgray, pink, rgba(255, 192, 203, 0.404));
+    color: rgba(173, 28, 64, 0.671);
     position: absolute;
 
-    padding: 10px;
-    border: 2px solid #a723b8;
-    border-radius: 10px;
-    left: -12%;
-    top: -4%;
+    font-size: 1.4rem;
+}
+
+.pop-up {
+    width: 20vw;
+    background-color: rgba(185, 145, 152, 0.938);
+
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    position: absolute;
+    top: 2.5vh;
+    left: 1.97vw;
+
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 10px;
 
     cursor: pointer;
 
-    transition: 
-        box-shadow .4s linear,
-        transform .6s linear;
+    transition: .4s linear;
+    animation: esmarecer .4s linear;
 
-    z-index: 100;
+        z-index: 100;
 }
 
-.projects .pop-up li{
-    font-size: 20px;
-    color: white;
-    margin-left: 10px;
-}
-
-.projects .pop-up:hover {
-    border: 2px solid #b82323;
-    box-shadow: 0 0 100px 10px rgba(149, 23, 42, 0.309);
-
-    transform: scale(1.01);
-}
-
-.projects .pop-up-exit {
-
-    background-color: #b8238955;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: absolute;
-
-    padding: 10px;
-    border: 2px solid #b82323;
-    border-radius: 10px;
-    left: -12%;
-    top: -4%;
-
-    z-index: 100;
-
-    animation: kitpop 1.3s ease forwards;
-    cursor: none;
-}
-
-@keyframes kitpop {
+@keyframes esmarecer {
     0%{
-        transform: scale(0.87);
-    }
-
-    10%{
-        box-shadow: -67px 0 60px 50px rgba(149, 23, 42, 0.309);
-    }
-
-    30%{
-        transform: translateX(160px);
-        opacity: 0.8;
-    }
-
-    31%{
-        box-shadow: 67px 0 60px 50px rgba(149, 23, 42, 0.309);
-    }
-
-    67%{
-        opacity: 0.3;
-    }
-
-    99%{
-        transform: translateX(-40vw);
+        opacity: 0;
     }
 
     100%{
-        opacity: 0;
-        display: none;
+        opacity: 1;
     }
 }
 
+.pop-up li{
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(5, 5, 5);
+    margin-bottom: 10px;
+
+    list-style-type: none;
+}
+
+.informacao:hover .pop-up{
+    display: flex;
+}
 
 .project{
 
