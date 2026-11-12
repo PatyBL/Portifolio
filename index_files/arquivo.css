@@ -405,68 +405,116 @@ body::before{
     }
 }
 
+
+
 .informacao {
-    width: 10px;
-    height: 10px;
-    padding: 10px;
-    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient( 300deg,lightgray, pink, rgba(255, 192, 203, 0.404));
-    color: rgba(173, 28, 64, 0.671);
     position: absolute;
+    z-index: 99999;
 
-    font-size: 1.4rem;
+    border-radius: 50%;
+
+    background: transparent;
+    color: rgba(173, 28, 64, 0.85);
+
+    font-size: 1.8vw;
+    cursor: pointer;
+
+    /* Impede selecionar o ícone e o texto */
+    user-select: none;
+    -webkit-user-select: none;
+
+    isolation: isolate;
+}
+
+.informacao::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        300deg,
+        lightgray,
+        pink,
+        rgba(255, 192, 203, 0.404)
+    );
+
+    z-index: -1;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.informacao:hover::before {
+    transform: scale(1.08);
+    box-shadow: 0 0.2vw 0.6vw rgba(0, 0, 0, 0.25);
+    border-radius: 50% 50% 30% 50%;
 }
 
 .pop-up {
     width: 20vw;
-    background-color: rgba(185, 145, 152, 0.938);
+
+    background-color: rgba(185, 145, 152, 0.96);
 
     display: none;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5vw;
 
     position: absolute;
-    top: 2.5vh;
-    left: 1.97vw;
+    top: 5.5vh;
+    left: 2.8vw;
 
-    padding: 10px 20px;
-    border-radius: 0 10px 10px 10px;
+    padding: 1vw 2vw;
+
+    border-radius: .7vw 1.7vw 1.7vw 1.7vw;
 
     cursor: pointer;
 
-    transition: .4s linear;
-    animation: esmarecer .4s linear;
+    animation: esmarecer 0.4s linear;
 
-        z-index: 100;
+    z-index: 100000;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.informacao:hover .pop-up {
+    display: flex;
+}
+
+.pop-up li {
+    font-size: 1.2vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(5, 5, 5);
+    margin-bottom: 0.7vw;
+    list-style-type: none;
+
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 @keyframes esmarecer {
-    0%{
+    0% {
         opacity: 0;
     }
 
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
-.pop-up li{
-    font-size: 18px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(5, 5, 5);
-    margin-bottom: 10px;
-
-    list-style-type: none;
-}
-
-.informacao:hover .pop-up{
-    display: flex;
-}
 
 .project{
 
