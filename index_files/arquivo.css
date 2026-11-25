@@ -754,6 +754,31 @@ body::before{
     box-shadow: 0 10px 30px rgba(241, 239, 247, .28);
 }
 
+.menor-off{
+    position: relative;
+    z-index: 9999;
+    
+    
+    transform-origin: center;
+    
+    cursor: grabbing;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    animation: entrada-PequenoMaior .2s forwards;
+}
+
+@keyframes entrada-PequenoMaior {
+    0%{
+        transform: scale(.9);
+    }
+    
+    100% {
+        box-shadow: 0 10px 30px rgba(116, 49, 192, 0.664);
+        transform: scale(1.4);
+    }
+}
+
 .project-active .img-a::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -809,6 +834,7 @@ body::before{
     transform: scale(1.7);
     opacity: 0.3;
 }
+
 
 
 @media (max-width: 768px) {
@@ -1011,11 +1037,11 @@ footer span:last-child{
 
 Minhas anotações do CSS:
 Olá, sou Nicolas, criador do site, e me orgulho muito de poder dizer que fiz tudo isto
-simplismente, na mão. Eu utilizei IA para pesquiasre nome de conceitos e escolher valores
+simplismente, na mão. Eu utilizei IA para pesquiasr e nome de conceitos e escolher valores
 que eu utilizei nas adaptacções do @media, mas além disso eu passei das 1000 linhas com
 muita força de vontade e ao que tudo indica, bastante tempo livre.
 
 Por ser meu portifolio ele tem que ter minha cara e minha identidade.
-Calma, calma... Quem é onerdola que esta lendo o css de uma pagina html qualquer?
+Calma, calma... Quem é o nerdola que esta lendo o css de uma pagina html qualquer?
 Espero que seja apenas eu mesmo do futuro.
                     00:11 - 26/09/2026
